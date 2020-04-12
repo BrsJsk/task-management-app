@@ -1,0 +1,1142 @@
+{
+  "projectGraph": {
+    "nodes": {
+      "tasks-app-e2e": {
+        "name": "tasks-app-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/tasks-app-e2e",
+          "sourceRoot": "apps/tasks-app-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/tasks-app-e2e/cypress.json",
+                "tsConfig": "apps/tasks-app-e2e/tsconfig.e2e.json",
+                "devServerTarget": "tasks-app:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "tasks-app:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/tasks-app-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/tasks-app-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/tasks-app-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            }
+          ]
+        }
+      },
+      "tasks-app": {
+        "name": "tasks-app",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/tasks-app",
+          "sourceRoot": "apps/tasks-app/src",
+          "prefix": "task-management",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/tasks-app",
+                "index": "apps/tasks-app/src/index.html",
+                "main": "apps/tasks-app/src/main.ts",
+                "polyfills": "apps/tasks-app/src/polyfills.ts",
+                "tsConfig": "apps/tasks-app/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/tasks-app/src/favicon.ico",
+                  "apps/tasks-app/src/assets"
+                ],
+                "styles": [
+                  "apps/tasks-app/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/tasks-app/src/environments/environment.ts",
+                      "with": "apps/tasks-app/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "tasks-app:build",
+                "proxyConfig": "apps/tasks-app/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "tasks-app:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "tasks-app:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/tasks-app/tsconfig.app.json",
+                  "apps/tasks-app/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/tasks-app/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/tasks-app/jest.config.js",
+                "tsConfig": "apps/tasks-app/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/tasks-app/src/test-setup.ts"
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/tasks-app/browserslist",
+              "ext": "",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1586707615592.0322
+            },
+            {
+              "file": "apps/tasks-app/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/app/app.component.scss",
+              "ext": ".scss",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/index.html",
+              "ext": ".html",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            },
+            {
+              "file": "apps/tasks-app/tslint.json",
+              "ext": ".json",
+              "mtime": 1586706889000
+            }
+          ]
+        }
+      },
+      "api": {
+        "name": "api",
+        "type": "app",
+        "data": {
+          "root": "apps/api",
+          "sourceRoot": "apps/api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/api",
+                "main": "apps/api/src/main.ts",
+                "tsConfig": "apps/api/tsconfig.app.json",
+                "assets": [
+                  "apps/api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/api/tsconfig.app.json",
+                  "apps/api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/api/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/api/jest.config.js",
+                "tsConfig": "apps/api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586707615592.0322
+            },
+            {
+              "file": "apps/api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1586707615591.0322
+            },
+            {
+              "file": "apps/api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/task/dto/create-task.dto.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/task/task.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586707860033.2205
+            },
+            {
+              "file": "apps/api/src/app/task/task.model.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/task/task.module.ts",
+              "ext": ".ts",
+              "mtime": 1586707686000
+            },
+            {
+              "file": "apps/api/src/app/task/task.service.ts",
+              "ext": ".ts",
+              "mtime": 1586707860033.2205
+            },
+            {
+              "file": "apps/api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1586707615591.0322
+            },
+            {
+              "file": "apps/api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1586707615591.0322
+            },
+            {
+              "file": "apps/api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1586707615592.0322
+            },
+            {
+              "file": "apps/api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1586707615591.0322
+            },
+            {
+              "file": "apps/api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1586707615590.0322
+            },
+            {
+              "file": "apps/api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586707615590.0322
+            },
+            {
+              "file": "apps/api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586707615592.0322
+            },
+            {
+              "file": "apps/api/tslint.json",
+              "ext": ".json",
+              "mtime": 1586707615590.0322
+            }
+          ]
+        }
+      },
+      "@nrwl/angular": {
+        "type": "npm",
+        "name": "@nrwl/angular",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@angular/animations": {
+        "type": "npm",
+        "name": "@angular/animations",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/common": {
+        "type": "npm",
+        "name": "@angular/common",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/compiler": {
+        "type": "npm",
+        "name": "@angular/compiler",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/core": {
+        "type": "npm",
+        "name": "@angular/core",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/forms": {
+        "type": "npm",
+        "name": "@angular/forms",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser": {
+        "type": "npm",
+        "name": "@angular/platform-browser",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "@angular/platform-browser-dynamic",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/router": {
+        "type": "npm",
+        "name": "@angular/router",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "core-js": {
+        "type": "npm",
+        "name": "core-js",
+        "data": {
+          "version": "^2.5.4",
+          "files": []
+        }
+      },
+      "rxjs": {
+        "type": "npm",
+        "name": "rxjs",
+        "data": {
+          "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "zone.js": {
+        "type": "npm",
+        "name": "zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "files": []
+        }
+      },
+      "@nestjs/common": {
+        "type": "npm",
+        "name": "@nestjs/common",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/core": {
+        "type": "npm",
+        "name": "@nestjs/core",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/platform-express": {
+        "type": "npm",
+        "name": "@nestjs/platform-express",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "reflect-metadata": {
+        "type": "npm",
+        "name": "reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "files": []
+        }
+      },
+      "@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "@angular-devkit/build-angular",
+        "data": {
+          "version": "0.901.0",
+          "files": []
+        }
+      },
+      "@angular/cli": {
+        "type": "npm",
+        "name": "@angular/cli",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@angular/compiler-cli": {
+        "type": "npm",
+        "name": "@angular/compiler-cli",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/language-service": {
+        "type": "npm",
+        "name": "@angular/language-service",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@nrwl/cypress": {
+        "type": "npm",
+        "name": "@nrwl/cypress",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nrwl/jest": {
+        "type": "npm",
+        "name": "@nrwl/jest",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nrwl/nest": {
+        "type": "npm",
+        "name": "@nrwl/nest",
+        "data": {
+          "version": "^9.2.2",
+          "files": []
+        }
+      },
+      "@nrwl/workspace": {
+        "type": "npm",
+        "name": "@nrwl/workspace",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@types/jest": {
+        "type": "npm",
+        "name": "@types/jest",
+        "data": {
+          "version": "25.1.4",
+          "files": []
+        }
+      },
+      "@types/node": {
+        "type": "npm",
+        "name": "@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "files": []
+        }
+      },
+      "codelyzer": {
+        "type": "npm",
+        "name": "codelyzer",
+        "data": {
+          "version": "~5.0.1",
+          "files": []
+        }
+      },
+      "cypress": {
+        "type": "npm",
+        "name": "cypress",
+        "data": {
+          "version": "^4.1.0",
+          "files": []
+        }
+      },
+      "dotenv": {
+        "type": "npm",
+        "name": "dotenv",
+        "data": {
+          "version": "6.2.0",
+          "files": []
+        }
+      },
+      "eslint": {
+        "type": "npm",
+        "name": "eslint",
+        "data": {
+          "version": "6.8.0",
+          "files": []
+        }
+      },
+      "jest": {
+        "type": "npm",
+        "name": "jest",
+        "data": {
+          "version": "25.2.3",
+          "files": []
+        }
+      },
+      "jest-preset-angular": {
+        "type": "npm",
+        "name": "jest-preset-angular",
+        "data": {
+          "version": "8.1.2",
+          "files": []
+        }
+      },
+      "prettier": {
+        "type": "npm",
+        "name": "prettier",
+        "data": {
+          "version": "1.19.1",
+          "files": []
+        }
+      },
+      "ts-jest": {
+        "type": "npm",
+        "name": "ts-jest",
+        "data": {
+          "version": "25.2.1",
+          "files": []
+        }
+      },
+      "ts-node": {
+        "type": "npm",
+        "name": "ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "files": []
+        }
+      },
+      "tslint": {
+        "type": "npm",
+        "name": "tslint",
+        "data": {
+          "version": "~6.0.0",
+          "files": []
+        }
+      },
+      "typescript": {
+        "type": "npm",
+        "name": "typescript",
+        "data": {
+          "version": "~3.8.3",
+          "files": []
+        }
+      },
+      "@nrwl/node": {
+        "type": "npm",
+        "name": "@nrwl/node",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nestjs/schematics": {
+        "type": "npm",
+        "name": "@nestjs/schematics",
+        "data": {
+          "version": "^6.7.0",
+          "files": []
+        }
+      },
+      "@nestjs/testing": {
+        "type": "npm",
+        "name": "@nestjs/testing",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "tasks-app-e2e": [
+        {
+          "type": "implicit",
+          "source": "tasks-app-e2e",
+          "target": "tasks-app"
+        }
+      ],
+      "tasks-app": [
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "zone.js"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "jest-preset-angular"
+        }
+      ],
+      "api": [
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/core"
+        }
+      ],
+      "@nrwl/angular": [],
+      "@angular/animations": [],
+      "@angular/common": [],
+      "@angular/compiler": [],
+      "@angular/core": [],
+      "@angular/forms": [],
+      "@angular/platform-browser": [],
+      "@angular/platform-browser-dynamic": [],
+      "@angular/router": [],
+      "core-js": [],
+      "rxjs": [],
+      "zone.js": [],
+      "@nestjs/common": [],
+      "@nestjs/core": [],
+      "@nestjs/platform-express": [],
+      "reflect-metadata": [],
+      "@angular-devkit/build-angular": [],
+      "@angular/cli": [],
+      "@angular/compiler-cli": [],
+      "@angular/language-service": [],
+      "@nrwl/cypress": [],
+      "@nrwl/jest": [],
+      "@nrwl/nest": [],
+      "@nrwl/workspace": [],
+      "@types/jest": [],
+      "@types/node": [],
+      "codelyzer": [],
+      "cypress": [],
+      "dotenv": [],
+      "eslint": [],
+      "jest": [],
+      "jest-preset-angular": [],
+      "prettier": [],
+      "ts-jest": [],
+      "ts-node": [],
+      "tslint": [],
+      "typescript": [],
+      "@nrwl/node": [],
+      "@nestjs/schematics": [],
+      "@nestjs/testing": []
+    }
+  },
+  "fileMap": {
+    "tasks-app-e2e": [
+      {
+        "file": "apps/tasks-app-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      }
+    ],
+    "tasks-app": [
+      {
+        "file": "apps/tasks-app/browserslist",
+        "ext": "",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1586707615592.0322
+      },
+      {
+        "file": "apps/tasks-app/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/app/app.component.scss",
+        "ext": ".scss",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/index.html",
+        "ext": ".html",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      },
+      {
+        "file": "apps/tasks-app/tslint.json",
+        "ext": ".json",
+        "mtime": 1586706889000
+      }
+    ],
+    "api": [
+      {
+        "file": "apps/api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586707615592.0322
+      },
+      {
+        "file": "apps/api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1586707615591.0322
+      },
+      {
+        "file": "apps/api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/task/dto/create-task.dto.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/task/task.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586707860033.2205
+      },
+      {
+        "file": "apps/api/src/app/task/task.model.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/task/task.module.ts",
+        "ext": ".ts",
+        "mtime": 1586707686000
+      },
+      {
+        "file": "apps/api/src/app/task/task.service.ts",
+        "ext": ".ts",
+        "mtime": 1586707860033.2205
+      },
+      {
+        "file": "apps/api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1586707615591.0322
+      },
+      {
+        "file": "apps/api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1586707615591.0322
+      },
+      {
+        "file": "apps/api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1586707615592.0322
+      },
+      {
+        "file": "apps/api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1586707615591.0322
+      },
+      {
+        "file": "apps/api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1586707615590.0322
+      },
+      {
+        "file": "apps/api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586707615590.0322
+      },
+      {
+        "file": "apps/api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586707615592.0322
+      },
+      {
+        "file": "apps/api/tslint.json",
+        "ext": ".json",
+        "mtime": 1586707615590.0322
+      }
+    ]
+  }
+}
