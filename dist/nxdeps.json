@@ -234,7 +234,7 @@
             {
               "file": "apps/tasks-app/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586706889000
+              "mtime": 1586713240516.1973
             },
             {
               "file": "apps/tasks-app/src/assets/.gitkeep",
@@ -594,6 +594,38 @@
           "files": []
         }
       },
+      "@ngrx/store": {
+        "type": "npm",
+        "name": "@ngrx/store",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@ngrx/effects": {
+        "type": "npm",
+        "name": "@ngrx/effects",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@ngrx/entity": {
+        "type": "npm",
+        "name": "@ngrx/entity",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@ngrx/router-store": {
+        "type": "npm",
+        "name": "@ngrx/router-store",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
       "@angular-devkit/build-angular": {
         "type": "npm",
         "name": "@angular-devkit/build-angular",
@@ -785,6 +817,22 @@
           "version": "^6.8.3",
           "files": []
         }
+      },
+      "@ngrx/schematics": {
+        "type": "npm",
+        "name": "@ngrx/schematics",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@ngrx/store-devtools": {
+        "type": "npm",
+        "name": "@ngrx/store-devtools",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
       }
     },
     "dependencies": {
@@ -805,6 +853,21 @@
           "type": "static",
           "source": "tasks-app",
           "target": "@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@ngrx/store"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@ngrx/effects"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@ngrx/store-devtools"
         },
         {
           "type": "static",
@@ -855,6 +918,10 @@
       "@nestjs/core": [],
       "@nestjs/platform-express": [],
       "reflect-metadata": [],
+      "@ngrx/store": [],
+      "@ngrx/effects": [],
+      "@ngrx/entity": [],
+      "@ngrx/router-store": [],
       "@angular-devkit/build-angular": [],
       "@angular/cli": [],
       "@angular/compiler-cli": [],
@@ -878,7 +945,9 @@
       "typescript": [],
       "@nrwl/node": [],
       "@nestjs/schematics": [],
-      "@nestjs/testing": []
+      "@nestjs/testing": [],
+      "@ngrx/schematics": [],
+      "@ngrx/store-devtools": []
     }
   },
   "fileMap": {
@@ -973,7 +1042,7 @@
       {
         "file": "apps/tasks-app/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586706889000
+        "mtime": 1586713240516.1973
       },
       {
         "file": "apps/tasks-app/src/assets/.gitkeep",
