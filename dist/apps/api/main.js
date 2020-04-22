@@ -209,6 +209,23 @@ class CreateTaskDto {
 
 /***/ }),
 
+/***/ "./apps/api/src/app/task/dto/update-status.dto.ts":
+/*!********************************************************!*\
+  !*** ./apps/api/src/app/task/dto/update-status.dto.ts ***!
+  \********************************************************/
+/*! exports provided: UpdateStatusDto */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateStatusDto", function() { return UpdateStatusDto; });
+class UpdateStatusDto {
+}
+;
+
+
+/***/ }),
+
 /***/ "./apps/api/src/app/task/task.controller.ts":
 /*!**************************************************!*\
   !*** ./apps/api/src/app/task/task.controller.ts ***!
@@ -225,7 +242,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.service */ "./apps/api/src/app/task/task.service.ts");
 /* harmony import */ var _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dto/create-task.dto */ "./apps/api/src/app/task/dto/create-task.dto.ts");
-var _a, _b;
+/* harmony import */ var _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dto/update-status.dto */ "./apps/api/src/app/task/dto/update-status.dto.ts");
+var _a, _b, _c;
+
 
 
 
@@ -245,6 +264,9 @@ let TaskController = class TaskController {
     }
     delete(id) {
         return this.taskService.delete(id);
+    }
+    updateStatus(id, body) {
+        return this.taskService.updateStatus(id, body.status);
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -274,9 +296,16 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
 ], TaskController.prototype, "delete", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Patch"])('/:id/status'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])('id')), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String, typeof (_b = typeof _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"] !== "undefined" && _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"]) === "function" ? _b : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+], TaskController.prototype, "updateStatus", null);
 TaskController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('task'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_b = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _b : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _c : Object])
 ], TaskController);
 
 
@@ -382,6 +411,15 @@ let TaskService = class TaskService {
     delete(id) {
         this.tasks = this.tasks.filter(task => task.id !== id);
         return this.tasks;
+    }
+    updateStatus(id, status) {
+        this.tasks = this.tasks.map(task => {
+            if (task.id === id) {
+                task.status = status;
+            }
+            return task;
+        });
+        return this.findById(id);
     }
 };
 TaskService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([

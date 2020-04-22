@@ -406,7 +406,7 @@
             {
               "file": "apps/api/src/app/task/task.controller.ts",
               "ext": ".ts",
-              "mtime": 1587491697241.212
+              "mtime": 1587576566749.604
             },
             {
               "file": "apps/api/src/app/task/task.model.ts",
@@ -421,7 +421,7 @@
             {
               "file": "apps/api/src/app/task/task.service.ts",
               "ext": ".ts",
-              "mtime": 1587491697241.212
+              "mtime": 1587576566749.604
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
@@ -1149,7 +1149,7 @@
       {
         "file": "apps/api/src/app/task/task.controller.ts",
         "ext": ".ts",
-        "mtime": 1587491697241.212
+        "mtime": 1587576566749.604
       },
       {
         "file": "apps/api/src/app/task/task.model.ts",
@@ -1164,7 +1164,7 @@
       {
         "file": "apps/api/src/app/task/task.service.ts",
         "ext": ".ts",
-        "mtime": 1587491697241.212
+        "mtime": 1587576566749.604
       },
       {
         "file": "apps/api/src/assets/.gitkeep",
