@@ -209,6 +209,22 @@ class CreateTaskDto {
 
 /***/ }),
 
+/***/ "./apps/api/src/app/task/dto/get-tasks-filter.dto.ts":
+/*!***********************************************************!*\
+  !*** ./apps/api/src/app/task/dto/get-tasks-filter.dto.ts ***!
+  \***********************************************************/
+/*! exports provided: GetTasksFilterDto */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetTasksFilterDto", function() { return GetTasksFilterDto; });
+class GetTasksFilterDto {
+}
+
+
+/***/ }),
+
 /***/ "./apps/api/src/app/task/dto/update-status.dto.ts":
 /*!********************************************************!*\
   !*** ./apps/api/src/app/task/dto/update-status.dto.ts ***!
@@ -243,7 +259,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.service */ "./apps/api/src/app/task/task.service.ts");
 /* harmony import */ var _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dto/create-task.dto */ "./apps/api/src/app/task/dto/create-task.dto.ts");
 /* harmony import */ var _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dto/update-status.dto */ "./apps/api/src/app/task/dto/update-status.dto.ts");
-var _a, _b, _c;
+/* harmony import */ var _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dto/get-tasks-filter.dto */ "./apps/api/src/app/task/dto/get-tasks-filter.dto.ts");
+var _a, _b, _c, _d;
+
 
 
 
@@ -253,7 +271,11 @@ let TaskController = class TaskController {
     constructor(taskService) {
         this.taskService = taskService;
     }
-    findAll() {
+    findTasks(filterDto) {
+        console.log(filterDto);
+        if (Object.keys(filterDto)) {
+            return this.taskService.getTasksWithFilters(filterDto);
+        }
         return this.taskService.findAll();
     }
     create(createTaskDto) {
@@ -271,15 +293,16 @@ let TaskController = class TaskController {
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Query"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_5__["GetTasksFilterDto"] !== "undefined" && _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_5__["GetTasksFilterDto"]) === "function" ? _a : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
-], TaskController.prototype, "findAll", null);
+], TaskController.prototype, "findTasks", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"] !== "undefined" && _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"]) === "function" ? _a : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_b = typeof _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"] !== "undefined" && _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"]) === "function" ? _b : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
 ], TaskController.prototype, "create", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -300,12 +323,12 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Patch"])('/:id/status'),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])('id')), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String, typeof (_b = typeof _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"] !== "undefined" && _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"]) === "function" ? _b : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [String, typeof (_c = typeof _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"] !== "undefined" && _dto_update_status_dto__WEBPACK_IMPORTED_MODULE_4__["UpdateStatusDto"]) === "function" ? _c : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
 ], TaskController.prototype, "updateStatus", null);
 TaskController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('task'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _c : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _d : Object])
 ], TaskController);
 
 
@@ -392,6 +415,10 @@ let TaskService = class TaskService {
         this.tasks = [];
     }
     findAll() {
+        return this.tasks;
+    }
+    getTasksWithFilters(filterDto) {
+        const tasks = this.findAll();
         return this.tasks;
     }
     create(createTaskDto) {
