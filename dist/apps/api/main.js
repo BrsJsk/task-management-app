@@ -272,7 +272,6 @@ let TaskController = class TaskController {
         this.taskService = taskService;
     }
     findTasks(filterDto) {
-        console.log(filterDto);
         if (Object.keys(filterDto)) {
             return this.taskService.getTasksWithFilters(filterDto);
         }
@@ -418,7 +417,15 @@ let TaskService = class TaskService {
         return this.tasks;
     }
     getTasksWithFilters(filterDto) {
-        const tasks = this.findAll();
+        const { search, status } = filterDto;
+        let tasks = this.findAll();
+        if (search) {
+            tasks = tasks.filter(task => task.description.includes(search) ||
+                task.title.includes(search));
+        }
+        if (status) {
+            tasks = tasks.filter(task => task.status === status);
+        }
         return this.tasks;
     }
     create(createTaskDto) {
@@ -427,7 +434,7 @@ let TaskService = class TaskService {
             id: uuid_v1__WEBPACK_IMPORTED_MODULE_2__(),
             title,
             description,
-            status: _task_model__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].OPEN,
+            status: _task_model__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].OPEN
         };
         this.tasks = [...this.tasks, task];
         return task;

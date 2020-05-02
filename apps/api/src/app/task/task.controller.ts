@@ -10,7 +10,6 @@ export class TaskController {
 
     @Get()
     findTasks(@Query() filterDto: GetTasksFilterDto) {
-        console.log(filterDto)
         if (Object.keys(filterDto)) {
             return this.taskService.getTasksWithFilters(filterDto);
         }
