@@ -374,6 +374,11 @@
               "mtime": 1588445198665.8696
             },
             {
+              "file": "apps/api/ormconfig.js",
+              "ext": ".js",
+              "mtime": 1588450573825.6184
+            },
+            {
               "file": "apps/api/src/app/.gitkeep",
               "ext": "",
               "mtime": 1588445198665.8696
@@ -391,7 +396,7 @@
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1588445198665.8696
+              "mtime": 1588449692629.9219
             },
             {
               "file": "apps/api/src/app/app.service.ts",
@@ -399,39 +404,59 @@
               "mtime": 1588445198665.8696
             },
             {
+              "file": "apps/api/src/app/config/typeorm.config.ts",
+              "ext": ".ts",
+              "mtime": 1588449731274.0815
+            },
+            {
               "file": "apps/api/src/app/task/dto/create-task.dto.ts",
               "ext": ".ts",
-              "mtime": 1588445198665.8696
+              "mtime": 1588447765438.4126
             },
             {
               "file": "apps/api/src/app/task/dto/get-tasks-filter.dto.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450269576.3625
             },
             {
               "file": "apps/api/src/app/task/dto/update-status.dto.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450238924.2356
+            },
+            {
+              "file": "apps/api/src/app/task/pipes/task-status-validation.pipe.ts",
+              "ext": ".ts",
+              "mtime": 1588450238924.2356
+            },
+            {
+              "file": "apps/api/src/app/task/task-status.enum.ts",
+              "ext": ".ts",
+              "mtime": 1588450169067.9468
             },
             {
               "file": "apps/api/src/app/task/task.controller.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450169067.9468
             },
             {
-              "file": "apps/api/src/app/task/task.model.ts",
+              "file": "apps/api/src/app/task/task.entity.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450195881.0576
             },
             {
               "file": "apps/api/src/app/task/task.module.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450001872.1792
+            },
+            {
+              "file": "apps/api/src/app/task/task.repository.ts",
+              "ext": ".ts",
+              "mtime": 1588450001872.1792
             },
             {
               "file": "apps/api/src/app/task/task.service.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588450180498.9941
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
@@ -474,14 +499,6 @@
               "mtime": 1588445198667.8696
             }
           ]
-        }
-      },
-      "@nrwl/angular": {
-        "type": "npm",
-        "name": "@nrwl/angular",
-        "data": {
-          "version": "9.2.2",
-          "files": []
         }
       },
       "@angular/animations": {
@@ -548,30 +565,6 @@
           "files": []
         }
       },
-      "core-js": {
-        "type": "npm",
-        "name": "core-js",
-        "data": {
-          "version": "^2.5.4",
-          "files": []
-        }
-      },
-      "rxjs": {
-        "type": "npm",
-        "name": "rxjs",
-        "data": {
-          "version": "~6.5.4",
-          "files": []
-        }
-      },
-      "zone.js": {
-        "type": "npm",
-        "name": "zone.js",
-        "data": {
-          "version": "^0.10.2",
-          "files": []
-        }
-      },
       "@nestjs/common": {
         "type": "npm",
         "name": "@nestjs/common",
@@ -596,19 +589,11 @@
           "files": []
         }
       },
-      "reflect-metadata": {
+      "@nestjs/typeorm": {
         "type": "npm",
-        "name": "reflect-metadata",
+        "name": "@nestjs/typeorm",
         "data": {
-          "version": "^0.1.13",
-          "files": []
-        }
-      },
-      "@ngrx/store": {
-        "type": "npm",
-        "name": "@ngrx/store",
-        "data": {
-          "version": "9.0.0",
+          "version": "^7.0.0",
           "files": []
         }
       },
@@ -633,6 +618,86 @@
         "name": "@ngrx/router-store",
         "data": {
           "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@ngrx/store": {
+        "type": "npm",
+        "name": "@ngrx/store",
+        "data": {
+          "version": "9.0.0",
+          "files": []
+        }
+      },
+      "@nrwl/angular": {
+        "type": "npm",
+        "name": "@nrwl/angular",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "class-transformer": {
+        "type": "npm",
+        "name": "class-transformer",
+        "data": {
+          "version": "^0.2.3",
+          "files": []
+        }
+      },
+      "class-validator": {
+        "type": "npm",
+        "name": "class-validator",
+        "data": {
+          "version": "^0.12.2",
+          "files": []
+        }
+      },
+      "core-js": {
+        "type": "npm",
+        "name": "core-js",
+        "data": {
+          "version": "^2.5.4",
+          "files": []
+        }
+      },
+      "mysql": {
+        "type": "npm",
+        "name": "mysql",
+        "data": {
+          "version": "^2.18.1",
+          "files": []
+        }
+      },
+      "reflect-metadata": {
+        "type": "npm",
+        "name": "reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "files": []
+        }
+      },
+      "rxjs": {
+        "type": "npm",
+        "name": "rxjs",
+        "data": {
+          "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "typeorm": {
+        "type": "npm",
+        "name": "typeorm",
+        "data": {
+          "version": "^0.2.24",
+          "files": []
+        }
+      },
+      "zone.js": {
+        "type": "npm",
+        "name": "zone.js",
+        "data": {
+          "version": "^0.10.2",
           "files": []
         }
       },
@@ -909,10 +974,24 @@
         {
           "type": "static",
           "source": "api",
+          "target": "@nestjs/typeorm"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "class-validator"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "typeorm"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "@nestjs/core"
         }
       ],
-      "@nrwl/angular": [],
       "@angular/animations": [],
       "@angular/common": [],
       "@angular/compiler": [],
@@ -921,17 +1000,23 @@
       "@angular/platform-browser": [],
       "@angular/platform-browser-dynamic": [],
       "@angular/router": [],
-      "core-js": [],
-      "rxjs": [],
-      "zone.js": [],
       "@nestjs/common": [],
       "@nestjs/core": [],
       "@nestjs/platform-express": [],
-      "reflect-metadata": [],
-      "@ngrx/store": [],
+      "@nestjs/typeorm": [],
       "@ngrx/effects": [],
       "@ngrx/entity": [],
       "@ngrx/router-store": [],
+      "@ngrx/store": [],
+      "@nrwl/angular": [],
+      "class-transformer": [],
+      "class-validator": [],
+      "core-js": [],
+      "mysql": [],
+      "reflect-metadata": [],
+      "rxjs": [],
+      "typeorm": [],
+      "zone.js": [],
       "@angular-devkit/build-angular": [],
       "@angular/cli": [],
       "@angular/compiler-cli": [],
@@ -1127,6 +1212,11 @@
         "mtime": 1588445198665.8696
       },
       {
+        "file": "apps/api/ormconfig.js",
+        "ext": ".js",
+        "mtime": 1588450573825.6184
+      },
+      {
         "file": "apps/api/src/app/.gitkeep",
         "ext": "",
         "mtime": 1588445198665.8696
@@ -1144,7 +1234,7 @@
       {
         "file": "apps/api/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1588445198665.8696
+        "mtime": 1588449692629.9219
       },
       {
         "file": "apps/api/src/app/app.service.ts",
@@ -1152,39 +1242,59 @@
         "mtime": 1588445198665.8696
       },
       {
+        "file": "apps/api/src/app/config/typeorm.config.ts",
+        "ext": ".ts",
+        "mtime": 1588449731274.0815
+      },
+      {
         "file": "apps/api/src/app/task/dto/create-task.dto.ts",
         "ext": ".ts",
-        "mtime": 1588445198665.8696
+        "mtime": 1588447765438.4126
       },
       {
         "file": "apps/api/src/app/task/dto/get-tasks-filter.dto.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450269576.3625
       },
       {
         "file": "apps/api/src/app/task/dto/update-status.dto.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450238924.2356
+      },
+      {
+        "file": "apps/api/src/app/task/pipes/task-status-validation.pipe.ts",
+        "ext": ".ts",
+        "mtime": 1588450238924.2356
+      },
+      {
+        "file": "apps/api/src/app/task/task-status.enum.ts",
+        "ext": ".ts",
+        "mtime": 1588450169067.9468
       },
       {
         "file": "apps/api/src/app/task/task.controller.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450169067.9468
       },
       {
-        "file": "apps/api/src/app/task/task.model.ts",
+        "file": "apps/api/src/app/task/task.entity.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450195881.0576
       },
       {
         "file": "apps/api/src/app/task/task.module.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450001872.1792
+      },
+      {
+        "file": "apps/api/src/app/task/task.repository.ts",
+        "ext": ".ts",
+        "mtime": 1588450001872.1792
       },
       {
         "file": "apps/api/src/app/task/task.service.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588450180498.9941
       },
       {
         "file": "apps/api/src/assets/.gitkeep",

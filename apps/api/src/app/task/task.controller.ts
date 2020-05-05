@@ -20,36 +20,36 @@ import { TaskStatusValidationPipe } from "./pipes/task-status-validation.pipe";
 export class TaskController {
     constructor(private taskService: TaskService) {}
 
-    @Get()
-    findTasks(@Query() filterDto: GetTasksFilterDto) {
-        if (Object.keys(filterDto)) {
-            return this.taskService.getTasksWithFilters(filterDto);
-        }
+    // @Get()
+    // findTasks(@Query() filterDto: GetTasksFilterDto) {
+    //     if (Object.keys(filterDto)) {
+    //         return this.taskService.getTasksWithFilters(filterDto);
+    //     }
 
-        return this.taskService.findAll();
-    }
+    //     return this.taskService.findAll();
+    // }
 
-    @Post()
-    @UsePipes(ValidationPipe)
-    create(@Body() createTaskDto: CreateTaskDto) {
-        return this.taskService.create(createTaskDto);
-    }
+    // @Post()
+    // @UsePipes(ValidationPipe)
+    // create(@Body() createTaskDto: CreateTaskDto) {
+    //     return this.taskService.create(createTaskDto);
+    // }
 
-    @Get("/:id")
-    findById(@Param("id") id: string) {
-        return this.taskService.findById(id);
-    }
+    // @Get("/:id")
+    // findById(@Param("id") id: string) {
+    //     return this.taskService.findById(id);
+    // }
 
-    @Delete("/:id")
-    delete(@Param("id") id: string) {
-        return this.taskService.delete(id);
-    }
+    // @Delete("/:id")
+    // delete(@Param("id") id: string) {
+    //     return this.taskService.delete(id);
+    // }
 
-    @Patch("/:id/status")
-    updateStatus(
-        @Param("id") id: string,
-        @Body("status", TaskStatusValidationPipe) body: UpdateStatusDto
-    ) {
-        return this.taskService.updateStatus(id, body.status);
-    }
+    // @Patch("/:id/status")
+    // updateStatus(
+    //     @Param("id") id: string,
+    //     @Body("status", TaskStatusValidationPipe) body: UpdateStatusDto
+    // ) {
+    //     return this.taskService.updateStatus(id, body.status);
+    // }
 }
