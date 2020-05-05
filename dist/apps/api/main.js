@@ -208,6 +208,8 @@ AppService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "typeOrmConfig", function() { return typeOrmConfig; });
+/* harmony import */ var _task_task_entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../task/task.entity */ "./apps/api/src/app/task/task.entity.ts");
+
 const typeOrmConfig = {
     type: "mariadb",
     host: "localhost",
@@ -215,7 +217,7 @@ const typeOrmConfig = {
     username: "root",
     password: "noname",
     database: "taskman",
-    entities: [__dirname + "/../**/*.entity.ts"],
+    entities: [_task_task_entity__WEBPACK_IMPORTED_MODULE_0__["Task"]],
     synchronize: true
 };
 
@@ -310,11 +312,11 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
 ], Task.prototype, "description", void 0);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ type: 'text' }),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _task_status_enum__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"] !== "undefined" && _task_status_enum__WEBPACK_IMPORTED_MODULE_2__["TaskStatus"]) === "function" ? _a : Object)
 ], Task.prototype, "status", void 0);
 Task = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])('Task')
 ], Task);
 
 
@@ -458,7 +460,7 @@ bootstrap();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/boris/Documents/github/task-management/apps/api/src/main.ts */"./apps/api/src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Lenovo8gen\Documents\github\task-management\apps\api\src\main.ts */"./apps/api/src/main.ts");
 
 
 /***/ }),

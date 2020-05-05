@@ -1,4 +1,5 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
+import { Task } from '../task/task.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
     type: "mariadb",
@@ -7,6 +8,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     username: "root",
     password: "noname",
     database: "taskman",
-    entities: [__dirname + "/../**/*.entity.ts"],
+    entities: [Task],
     synchronize: true
 };

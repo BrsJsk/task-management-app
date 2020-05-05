@@ -40,52 +40,52 @@
             {
               "file": "apps/tasks-app-e2e/cypress.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245162.7383
             },
             {
               "file": "apps/tasks-app-e2e/src/fixtures/example.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245163.738
             },
             {
               "file": "apps/tasks-app-e2e/src/integration/app.spec.ts",
               "ext": ".ts",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245163.738
             },
             {
               "file": "apps/tasks-app-e2e/src/plugins/index.js",
               "ext": ".js",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245164.738
             },
             {
               "file": "apps/tasks-app-e2e/src/support/app.po.ts",
               "ext": ".ts",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245164.738
             },
             {
               "file": "apps/tasks-app-e2e/src/support/commands.ts",
               "ext": ".ts",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245164.738
             },
             {
               "file": "apps/tasks-app-e2e/src/support/index.ts",
               "ext": ".ts",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245165.7385
             },
             {
               "file": "apps/tasks-app-e2e/tsconfig.e2e.json",
               "ext": ".json",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245165.7385
             },
             {
               "file": "apps/tasks-app-e2e/tsconfig.json",
               "ext": ".json",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245165.7385
             },
             {
               "file": "apps/tasks-app-e2e/tslint.json",
               "ext": ".json",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245166.7378
             }
           ]
         }
@@ -199,107 +199,107 @@
             {
               "file": "apps/tasks-app/browserslist",
               "ext": "",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245166.7378
             },
             {
               "file": "apps/tasks-app/jest.config.js",
               "ext": ".js",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245166.7378
             },
             {
               "file": "apps/tasks-app/proxy.conf.json",
               "ext": ".json",
-              "mtime": 1588445198668.8696
+              "mtime": 1588680245167.7383
             },
             {
               "file": "apps/tasks-app/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245167.7383
             },
             {
               "file": "apps/tasks-app/src/app/app.component.scss",
               "ext": ".scss",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245168.7395
             },
             {
               "file": "apps/tasks-app/src/app/app.component.spec.ts",
               "ext": ".ts",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245168.7395
             },
             {
               "file": "apps/tasks-app/src/app/app.component.ts",
               "ext": ".ts",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245168.7395
             },
             {
               "file": "apps/tasks-app/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245169.7383
             },
             {
               "file": "apps/tasks-app/src/assets/.gitkeep",
               "ext": "",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245169.7383
             },
             {
               "file": "apps/tasks-app/src/environments/environment.prod.ts",
               "ext": ".ts",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245169.7383
             },
             {
               "file": "apps/tasks-app/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245170.738
             },
             {
               "file": "apps/tasks-app/src/favicon.ico",
               "ext": ".ico",
-              "mtime": 1588445198669.8696
+              "mtime": 1588680245170.738
             },
             {
               "file": "apps/tasks-app/src/index.html",
               "ext": ".html",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245171.6458
             },
             {
               "file": "apps/tasks-app/src/main.ts",
               "ext": ".ts",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245171.6458
             },
             {
               "file": "apps/tasks-app/src/polyfills.ts",
               "ext": ".ts",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245171.6458
             },
             {
               "file": "apps/tasks-app/src/styles.scss",
               "ext": ".scss",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245171.6458
             },
             {
               "file": "apps/tasks-app/src/test-setup.ts",
               "ext": ".ts",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245172.6538
             },
             {
               "file": "apps/tasks-app/tsconfig.app.json",
               "ext": ".json",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245172.6538
             },
             {
               "file": "apps/tasks-app/tsconfig.json",
               "ext": ".json",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245172.6538
             },
             {
               "file": "apps/tasks-app/tsconfig.spec.json",
               "ext": ".json",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245172.6538
             },
             {
               "file": "apps/tasks-app/tslint.json",
               "ext": ".json",
-              "mtime": 1588445198670.8696
+              "mtime": 1588680245173.6533
             }
           ]
         }
@@ -371,132 +371,132 @@
             {
               "file": "apps/api/jest.config.js",
               "ext": ".js",
-              "mtime": 1588445198665.8696
+              "mtime": 1588680245154.7434
             },
             {
-              "file": "apps/api/ormconfig.js",
-              "ext": ".js",
-              "mtime": 1588450573825.6184
+              "file": "apps/api/ormconfig.ts",
+              "ext": ".ts",
+              "mtime": 1588682310302.2522
             },
             {
               "file": "apps/api/src/app/.gitkeep",
               "ext": "",
-              "mtime": 1588445198665.8696
+              "mtime": 1588680245155.7388
             },
             {
               "file": "apps/api/src/app/app.controller.spec.ts",
               "ext": ".ts",
-              "mtime": 1588445198665.8696
+              "mtime": 1588680245155.7388
             },
             {
               "file": "apps/api/src/app/app.controller.ts",
               "ext": ".ts",
-              "mtime": 1588445198665.8696
+              "mtime": 1588680245155.7388
             },
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1588449692629.9219
+              "mtime": 1588680245156.7427
             },
             {
               "file": "apps/api/src/app/app.service.ts",
               "ext": ".ts",
-              "mtime": 1588445198665.8696
+              "mtime": 1588680245156.7427
             },
             {
               "file": "apps/api/src/app/config/typeorm.config.ts",
               "ext": ".ts",
-              "mtime": 1588449731274.0815
+              "mtime": 1588682397896.925
             },
             {
               "file": "apps/api/src/app/task/dto/create-task.dto.ts",
               "ext": ".ts",
-              "mtime": 1588447765438.4126
+              "mtime": 1588680245157.7415
             },
             {
               "file": "apps/api/src/app/task/dto/get-tasks-filter.dto.ts",
               "ext": ".ts",
-              "mtime": 1588450269576.3625
+              "mtime": 1588680245157.7415
             },
             {
               "file": "apps/api/src/app/task/dto/update-status.dto.ts",
               "ext": ".ts",
-              "mtime": 1588450238924.2356
+              "mtime": 1588680245158.742
             },
             {
               "file": "apps/api/src/app/task/pipes/task-status-validation.pipe.ts",
               "ext": ".ts",
-              "mtime": 1588450238924.2356
+              "mtime": 1588680245158.742
             },
             {
               "file": "apps/api/src/app/task/task-status.enum.ts",
               "ext": ".ts",
-              "mtime": 1588450169067.9468
+              "mtime": 1588680245158.742
             },
             {
               "file": "apps/api/src/app/task/task.controller.ts",
               "ext": ".ts",
-              "mtime": 1588450169067.9468
+              "mtime": 1588680245159.7407
             },
             {
               "file": "apps/api/src/app/task/task.entity.ts",
               "ext": ".ts",
-              "mtime": 1588450195881.0576
+              "mtime": 1588682155952.3494
             },
             {
               "file": "apps/api/src/app/task/task.module.ts",
               "ext": ".ts",
-              "mtime": 1588450001872.1792
+              "mtime": 1588680245159.7407
             },
             {
               "file": "apps/api/src/app/task/task.repository.ts",
               "ext": ".ts",
-              "mtime": 1588450001872.1792
+              "mtime": 1588681452070.17
             },
             {
               "file": "apps/api/src/app/task/task.service.ts",
               "ext": ".ts",
-              "mtime": 1588450180498.9941
+              "mtime": 1588680245160.7385
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
               "ext": "",
-              "mtime": 1588445198666.8696
+              "mtime": 1588680245160.7385
             },
             {
               "file": "apps/api/src/environments/environment.prod.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588680245160.7385
             },
             {
               "file": "apps/api/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588680245161.7383
             },
             {
               "file": "apps/api/src/main.ts",
               "ext": ".ts",
-              "mtime": 1588445198666.8696
+              "mtime": 1588680245161.7383
             },
             {
               "file": "apps/api/tsconfig.app.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245161.7383
             },
             {
               "file": "apps/api/tsconfig.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245162.7383
             },
             {
               "file": "apps/api/tsconfig.spec.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245162.7383
             },
             {
               "file": "apps/api/tslint.json",
               "ext": ".json",
-              "mtime": 1588445198667.8696
+              "mtime": 1588680245162.7383
             }
           ]
         }
@@ -1050,291 +1050,291 @@
       {
         "file": "apps/tasks-app-e2e/cypress.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245162.7383
       },
       {
         "file": "apps/tasks-app-e2e/src/fixtures/example.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245163.738
       },
       {
         "file": "apps/tasks-app-e2e/src/integration/app.spec.ts",
         "ext": ".ts",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245163.738
       },
       {
         "file": "apps/tasks-app-e2e/src/plugins/index.js",
         "ext": ".js",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245164.738
       },
       {
         "file": "apps/tasks-app-e2e/src/support/app.po.ts",
         "ext": ".ts",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245164.738
       },
       {
         "file": "apps/tasks-app-e2e/src/support/commands.ts",
         "ext": ".ts",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245164.738
       },
       {
         "file": "apps/tasks-app-e2e/src/support/index.ts",
         "ext": ".ts",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245165.7385
       },
       {
         "file": "apps/tasks-app-e2e/tsconfig.e2e.json",
         "ext": ".json",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245165.7385
       },
       {
         "file": "apps/tasks-app-e2e/tsconfig.json",
         "ext": ".json",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245165.7385
       },
       {
         "file": "apps/tasks-app-e2e/tslint.json",
         "ext": ".json",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245166.7378
       }
     ],
     "tasks-app": [
       {
         "file": "apps/tasks-app/browserslist",
         "ext": "",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245166.7378
       },
       {
         "file": "apps/tasks-app/jest.config.js",
         "ext": ".js",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245166.7378
       },
       {
         "file": "apps/tasks-app/proxy.conf.json",
         "ext": ".json",
-        "mtime": 1588445198668.8696
+        "mtime": 1588680245167.7383
       },
       {
         "file": "apps/tasks-app/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245167.7383
       },
       {
         "file": "apps/tasks-app/src/app/app.component.scss",
         "ext": ".scss",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245168.7395
       },
       {
         "file": "apps/tasks-app/src/app/app.component.spec.ts",
         "ext": ".ts",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245168.7395
       },
       {
         "file": "apps/tasks-app/src/app/app.component.ts",
         "ext": ".ts",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245168.7395
       },
       {
         "file": "apps/tasks-app/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245169.7383
       },
       {
         "file": "apps/tasks-app/src/assets/.gitkeep",
         "ext": "",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245169.7383
       },
       {
         "file": "apps/tasks-app/src/environments/environment.prod.ts",
         "ext": ".ts",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245169.7383
       },
       {
         "file": "apps/tasks-app/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245170.738
       },
       {
         "file": "apps/tasks-app/src/favicon.ico",
         "ext": ".ico",
-        "mtime": 1588445198669.8696
+        "mtime": 1588680245170.738
       },
       {
         "file": "apps/tasks-app/src/index.html",
         "ext": ".html",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245171.6458
       },
       {
         "file": "apps/tasks-app/src/main.ts",
         "ext": ".ts",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245171.6458
       },
       {
         "file": "apps/tasks-app/src/polyfills.ts",
         "ext": ".ts",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245171.6458
       },
       {
         "file": "apps/tasks-app/src/styles.scss",
         "ext": ".scss",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245171.6458
       },
       {
         "file": "apps/tasks-app/src/test-setup.ts",
         "ext": ".ts",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245172.6538
       },
       {
         "file": "apps/tasks-app/tsconfig.app.json",
         "ext": ".json",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245172.6538
       },
       {
         "file": "apps/tasks-app/tsconfig.json",
         "ext": ".json",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245172.6538
       },
       {
         "file": "apps/tasks-app/tsconfig.spec.json",
         "ext": ".json",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245172.6538
       },
       {
         "file": "apps/tasks-app/tslint.json",
         "ext": ".json",
-        "mtime": 1588445198670.8696
+        "mtime": 1588680245173.6533
       }
     ],
     "api": [
       {
         "file": "apps/api/jest.config.js",
         "ext": ".js",
-        "mtime": 1588445198665.8696
+        "mtime": 1588680245154.7434
       },
       {
-        "file": "apps/api/ormconfig.js",
-        "ext": ".js",
-        "mtime": 1588450573825.6184
+        "file": "apps/api/ormconfig.ts",
+        "ext": ".ts",
+        "mtime": 1588682310302.2522
       },
       {
         "file": "apps/api/src/app/.gitkeep",
         "ext": "",
-        "mtime": 1588445198665.8696
+        "mtime": 1588680245155.7388
       },
       {
         "file": "apps/api/src/app/app.controller.spec.ts",
         "ext": ".ts",
-        "mtime": 1588445198665.8696
+        "mtime": 1588680245155.7388
       },
       {
         "file": "apps/api/src/app/app.controller.ts",
         "ext": ".ts",
-        "mtime": 1588445198665.8696
+        "mtime": 1588680245155.7388
       },
       {
         "file": "apps/api/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1588449692629.9219
+        "mtime": 1588680245156.7427
       },
       {
         "file": "apps/api/src/app/app.service.ts",
         "ext": ".ts",
-        "mtime": 1588445198665.8696
+        "mtime": 1588680245156.7427
       },
       {
         "file": "apps/api/src/app/config/typeorm.config.ts",
         "ext": ".ts",
-        "mtime": 1588449731274.0815
+        "mtime": 1588682397896.925
       },
       {
         "file": "apps/api/src/app/task/dto/create-task.dto.ts",
         "ext": ".ts",
-        "mtime": 1588447765438.4126
+        "mtime": 1588680245157.7415
       },
       {
         "file": "apps/api/src/app/task/dto/get-tasks-filter.dto.ts",
         "ext": ".ts",
-        "mtime": 1588450269576.3625
+        "mtime": 1588680245157.7415
       },
       {
         "file": "apps/api/src/app/task/dto/update-status.dto.ts",
         "ext": ".ts",
-        "mtime": 1588450238924.2356
+        "mtime": 1588680245158.742
       },
       {
         "file": "apps/api/src/app/task/pipes/task-status-validation.pipe.ts",
         "ext": ".ts",
-        "mtime": 1588450238924.2356
+        "mtime": 1588680245158.742
       },
       {
         "file": "apps/api/src/app/task/task-status.enum.ts",
         "ext": ".ts",
-        "mtime": 1588450169067.9468
+        "mtime": 1588680245158.742
       },
       {
         "file": "apps/api/src/app/task/task.controller.ts",
         "ext": ".ts",
-        "mtime": 1588450169067.9468
+        "mtime": 1588680245159.7407
       },
       {
         "file": "apps/api/src/app/task/task.entity.ts",
         "ext": ".ts",
-        "mtime": 1588450195881.0576
+        "mtime": 1588682155952.3494
       },
       {
         "file": "apps/api/src/app/task/task.module.ts",
         "ext": ".ts",
-        "mtime": 1588450001872.1792
+        "mtime": 1588680245159.7407
       },
       {
         "file": "apps/api/src/app/task/task.repository.ts",
         "ext": ".ts",
-        "mtime": 1588450001872.1792
+        "mtime": 1588681452070.17
       },
       {
         "file": "apps/api/src/app/task/task.service.ts",
         "ext": ".ts",
-        "mtime": 1588450180498.9941
+        "mtime": 1588680245160.7385
       },
       {
         "file": "apps/api/src/assets/.gitkeep",
         "ext": "",
-        "mtime": 1588445198666.8696
+        "mtime": 1588680245160.7385
       },
       {
         "file": "apps/api/src/environments/environment.prod.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588680245160.7385
       },
       {
         "file": "apps/api/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588680245161.7383
       },
       {
         "file": "apps/api/src/main.ts",
         "ext": ".ts",
-        "mtime": 1588445198666.8696
+        "mtime": 1588680245161.7383
       },
       {
         "file": "apps/api/tsconfig.app.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245161.7383
       },
       {
         "file": "apps/api/tsconfig.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245162.7383
       },
       {
         "file": "apps/api/tsconfig.spec.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245162.7383
       },
       {
         "file": "apps/api/tslint.json",
         "ext": ".json",
-        "mtime": 1588445198667.8696
+        "mtime": 1588680245162.7383
       }
     ]
   }
