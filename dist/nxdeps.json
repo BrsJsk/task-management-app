@@ -90,6 +90,14 @@
           ]
         }
       },
+      "ui-components": {
+        "type": "npm",
+        "name": "ui-components",
+        "data": {
+          "version": "^0.1.5",
+          "files": []
+        }
+      },
       "tasks-app": {
         "name": "tasks-app",
         "type": "app",
@@ -214,7 +222,7 @@
             {
               "file": "apps/tasks-app/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1588680245167.7383
+              "mtime": 1588754429951.196
             },
             {
               "file": "apps/tasks-app/src/app/app.component.scss",
@@ -234,7 +242,7 @@
             {
               "file": "apps/tasks-app/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1588680245169.7383
+              "mtime": 1588754403267.3845
             },
             {
               "file": "apps/tasks-app/src/assets/.gitkeep",
@@ -274,7 +282,7 @@
             {
               "file": "apps/tasks-app/src/styles.scss",
               "ext": ".scss",
-              "mtime": 1588680245171.6458
+              "mtime": 1588754761597.5789
             },
             {
               "file": "apps/tasks-app/src/test-setup.ts",
@@ -401,7 +409,7 @@
             {
               "file": "apps/api/src/app/config/typeorm.config.ts",
               "ext": ".ts",
-              "mtime": 1588682397896.925
+              "mtime": 1588752490473.9736
             },
             {
               "file": "apps/api/src/app/task/dto/create-task.dto.ts",
@@ -431,7 +439,7 @@
             {
               "file": "apps/api/src/app/task/task.controller.ts",
               "ext": ".ts",
-              "mtime": 1588680245159.7407
+              "mtime": 1588753249770.2847
             },
             {
               "file": "apps/api/src/app/task/task.entity.ts",
@@ -446,12 +454,12 @@
             {
               "file": "apps/api/src/app/task/task.repository.ts",
               "ext": ".ts",
-              "mtime": 1588681452070.17
+              "mtime": 1588753039309.2083
             },
             {
               "file": "apps/api/src/app/task/task.service.ts",
               "ext": ".ts",
-              "mtime": 1588680245160.7385
+              "mtime": 1588753249770.2847
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
@@ -484,6 +492,11 @@
               "mtime": 1588680245162.7383
             },
             {
+              "file": "apps/api/tsconfig.nx-tmp",
+              "ext": ".nx-tmp",
+              "mtime": 1588752013781.0935
+            },
+            {
               "file": "apps/api/tsconfig.spec.json",
               "ext": ".json",
               "mtime": 1588680245162.7383
@@ -500,7 +513,15 @@
         "type": "npm",
         "name": "@angular/animations",
         "data": {
-          "version": "^9.1.0",
+          "version": "^9.1.4",
+          "files": []
+        }
+      },
+      "@angular/cdk": {
+        "type": "npm",
+        "name": "@angular/cdk",
+        "data": {
+          "version": "^9.2.2",
           "files": []
         }
       },
@@ -528,11 +549,27 @@
           "files": []
         }
       },
+      "@angular/flex-layout": {
+        "type": "npm",
+        "name": "@angular/flex-layout",
+        "data": {
+          "version": "^9.0.0-beta.29",
+          "files": []
+        }
+      },
       "@angular/forms": {
         "type": "npm",
         "name": "@angular/forms",
         "data": {
           "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/material": {
+        "type": "npm",
+        "name": "@angular/material",
+        "data": {
+          "version": "^9.2.2",
           "files": []
         }
       },
@@ -629,6 +666,14 @@
         "name": "@nrwl/angular",
         "data": {
           "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nrwl/nx": {
+        "type": "npm",
+        "name": "@nrwl/nx",
+        "data": {
+          "version": "^7.8.7",
           "files": []
         }
       },
@@ -913,6 +958,28 @@
           "target": "tasks-app"
         }
       ],
+      "ui-components": [
+        {
+          "type": "static",
+          "source": "ui-components",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "ui-components",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "ui-components",
+          "target": "@angular/material"
+        },
+        {
+          "type": "static",
+          "source": "ui-components",
+          "target": "jest-preset-angular"
+        }
+      ],
       "tasks-app": [
         {
           "type": "static",
@@ -938,6 +1005,11 @@
           "type": "static",
           "source": "tasks-app",
           "target": "@ngrx/store-devtools"
+        },
+        {
+          "type": "static",
+          "source": "tasks-app",
+          "target": "@nrwl/nx"
         },
         {
           "type": "static",
@@ -988,10 +1060,13 @@
         }
       ],
       "@angular/animations": [],
+      "@angular/cdk": [],
       "@angular/common": [],
       "@angular/compiler": [],
       "@angular/core": [],
+      "@angular/flex-layout": [],
       "@angular/forms": [],
+      "@angular/material": [],
       "@angular/platform-browser": [],
       "@angular/platform-browser-dynamic": [],
       "@angular/router": [],
@@ -1004,6 +1079,7 @@
       "@ngrx/router-store": [],
       "@ngrx/store": [],
       "@nrwl/angular": [],
+      "@nrwl/nx": [],
       "class-transformer": [],
       "class-validator": [],
       "core-js": [],
@@ -1093,6 +1169,88 @@
         "mtime": 1588680245166.7378
       }
     ],
+    "ui-components": [
+      {
+        "file": "libs/ui-components/jest.config.js",
+        "ext": ".js",
+        "mtime": 1588753713825.1577
+      },
+      {
+        "file": "libs/ui-components/README.md",
+        "ext": ".md",
+        "mtime": 1588753713794.1216
+      },
+      {
+        "file": "libs/ui-components/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1588753713808.1567
+      },
+      {
+        "file": "libs/ui-components/src/lib/forms/components/input/input.component.css",
+        "ext": ".css",
+        "mtime": 1588753915374.723
+      },
+      {
+        "file": "libs/ui-components/src/lib/forms/components/input/input.component.html",
+        "ext": ".html",
+        "mtime": 1588754761597.5789
+      },
+      {
+        "file": "libs/ui-components/src/lib/forms/components/input/input.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1588753915365.723
+      },
+      {
+        "file": "libs/ui-components/src/lib/forms/components/input/input.component.ts",
+        "ext": ".ts",
+        "mtime": 1588753915369.7197
+      },
+      {
+        "file": "libs/ui-components/src/lib/forms/forms.module.ts",
+        "ext": ".ts",
+        "mtime": 1588754761597.5789
+      },
+      {
+        "file": "libs/ui-components/src/lib/ui-components.module.spec.ts",
+        "ext": ".ts",
+        "mtime": 1588753713817.123
+      },
+      {
+        "file": "libs/ui-components/src/lib/ui-components.module.ts",
+        "ext": ".ts",
+        "mtime": 1588754403267.3845
+      },
+      {
+        "file": "libs/ui-components/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1588753713833.1565
+      },
+      {
+        "file": "libs/ui-components/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1588753713821.1575
+      },
+      {
+        "file": "libs/ui-components/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1588753713798.1648
+      },
+      {
+        "file": "libs/ui-components/tsconfig.lib.prod.json",
+        "ext": ".json",
+        "mtime": 1588753713803.1218
+      },
+      {
+        "file": "libs/ui-components/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1588753713829.1228
+      },
+      {
+        "file": "libs/ui-components/tslint.json",
+        "ext": ".json",
+        "mtime": 1588753713804.1218
+      }
+    ],
     "tasks-app": [
       {
         "file": "apps/tasks-app/browserslist",
@@ -1112,7 +1270,7 @@
       {
         "file": "apps/tasks-app/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1588680245167.7383
+        "mtime": 1588754429951.196
       },
       {
         "file": "apps/tasks-app/src/app/app.component.scss",
@@ -1132,7 +1290,7 @@
       {
         "file": "apps/tasks-app/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1588680245169.7383
+        "mtime": 1588754403267.3845
       },
       {
         "file": "apps/tasks-app/src/assets/.gitkeep",
@@ -1172,7 +1330,7 @@
       {
         "file": "apps/tasks-app/src/styles.scss",
         "ext": ".scss",
-        "mtime": 1588680245171.6458
+        "mtime": 1588754761597.5789
       },
       {
         "file": "apps/tasks-app/src/test-setup.ts",
@@ -1234,7 +1392,7 @@
       {
         "file": "apps/api/src/app/config/typeorm.config.ts",
         "ext": ".ts",
-        "mtime": 1588682397896.925
+        "mtime": 1588752490473.9736
       },
       {
         "file": "apps/api/src/app/task/dto/create-task.dto.ts",
@@ -1264,7 +1422,7 @@
       {
         "file": "apps/api/src/app/task/task.controller.ts",
         "ext": ".ts",
-        "mtime": 1588680245159.7407
+        "mtime": 1588753249770.2847
       },
       {
         "file": "apps/api/src/app/task/task.entity.ts",
@@ -1279,12 +1437,12 @@
       {
         "file": "apps/api/src/app/task/task.repository.ts",
         "ext": ".ts",
-        "mtime": 1588681452070.17
+        "mtime": 1588753039309.2083
       },
       {
         "file": "apps/api/src/app/task/task.service.ts",
         "ext": ".ts",
-        "mtime": 1588680245160.7385
+        "mtime": 1588753249770.2847
       },
       {
         "file": "apps/api/src/assets/.gitkeep",
@@ -1315,6 +1473,11 @@
         "file": "apps/api/tsconfig.json",
         "ext": ".json",
         "mtime": 1588680245162.7383
+      },
+      {
+        "file": "apps/api/tsconfig.nx-tmp",
+        "ext": ".nx-tmp",
+        "mtime": 1588752013781.0935
       },
       {
         "file": "apps/api/tsconfig.spec.json",

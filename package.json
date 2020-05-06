@@ -29,11 +29,14 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^9.1.0",
+    "@angular/animations": "^9.1.4",
+    "@angular/cdk": "^9.2.2",
     "@angular/common": "^9.1.0",
     "@angular/compiler": "^9.1.0",
     "@angular/core": "^9.1.0",
+    "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "^9.1.0",
+    "@angular/material": "^9.2.2",
     "@angular/platform-browser": "^9.1.0",
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "^9.1.0",
@@ -46,6 +49,7 @@
     "@ngrx/router-store": "9.0.0",
     "@ngrx/store": "9.0.0",
     "@nrwl/angular": "9.2.2",
+    "@nrwl/nx": "^7.8.7",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "core-js": "^2.5.4",
@@ -53,6 +57,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "typeorm": "^0.2.24",
+    "ui-components": "^0.1.5",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
