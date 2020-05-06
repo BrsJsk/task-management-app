@@ -43,10 +43,10 @@ export class TaskController {
         return this.taskService.findById(id);
     }
 
-    // @Delete("/:id")
-    // delete(@Param("id") id: string) {
-    //     return this.taskService.delete(id);
-    // }
+    @Delete("/:id")
+    delete(@Param("id") id: number) {
+        return this.taskService.delete(id);
+    }
 
     // @Patch("/:id/status")
     // updateStatus(
