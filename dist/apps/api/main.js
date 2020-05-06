@@ -218,7 +218,7 @@ const typeOrmConfig = {
     password: "noname",
     database: "taskman",
     entities: [_task_task_entity__WEBPACK_IMPORTED_MODULE_0__["Task"]],
-    synchronize: true
+    synchronize: false
 };
 
 
@@ -268,7 +268,29 @@ let TaskController = class TaskController {
     constructor(taskService) {
         this.taskService = taskService;
     }
+    // @Get()
+    // findTasks(@Query() filterDto: GetTasksFilterDto) {
+    //     if (Object.keys(filterDto)) {
+    //         return this.taskService.getTasksWithFilters(filterDto);
+    //     }
+    //     return this.taskService.findAll();
+    // }
+    // @Post()
+    // @UsePipes(ValidationPipe)
+    // create(@Body() createTaskDto: CreateTaskDto) {
+    //     return this.taskService.create(createTaskDto);
+    // }
+    findById(id) {
+        return this.taskService.findById(id);
+    }
 };
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])("/:id"),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])("id")),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Number]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+], TaskController.prototype, "findById", null);
 TaskController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])("task"),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _a : Object])
@@ -404,12 +426,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _task_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.repository */ "./apps/api/src/app/task/task.repository.ts");
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
+var _a;
+
+
 
 
 let TaskService = class TaskService {
+    constructor(taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+    // private tasks: Task[] = [];
+    // findAll(): Task[] {
+    //     return this.tasks;
+    // }
+    // getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
+    //     const { search, status } = filterDto;
+    //     let tasks = this.findAll();
+    //     if (search) {
+    //         tasks = tasks.filter(
+    //             task =>
+    //                 task.description.includes(search) ||
+    //                 task.title.includes(search)
+    //         );
+    //     }
+    //     if (status) {
+    //         tasks = tasks.filter(task => task.status === status);
+    //     }
+    //     return this.tasks;
+    // }
+    // create(createTaskDto: CreateTaskDto): Task {
+    //     const { title, description } = createTaskDto;
+    //     const task: Task = {
+    //         id: uuid(),
+    //         title,
+    //         description,
+    //         status: TaskStatus.OPEN
+    //     };
+    //     this.tasks = [...this.tasks, task];
+    //     return task;
+    // }
+    findById(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const found = yield this.taskRepository.findOne(id);
+            if (!found) {
+                throw new _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["NotFoundException"]();
+            }
+            return found;
+        });
+    }
 };
 TaskService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["InjectRepository"])(_task_repository__WEBPACK_IMPORTED_MODULE_2__["TaskRepository"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _task_repository__WEBPACK_IMPORTED_MODULE_2__["TaskRepository"] !== "undefined" && _task_repository__WEBPACK_IMPORTED_MODULE_2__["TaskRepository"]) === "function" ? _a : Object])
 ], TaskService);
 
 

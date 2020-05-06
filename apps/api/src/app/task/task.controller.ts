@@ -35,10 +35,10 @@ export class TaskController {
     //     return this.taskService.create(createTaskDto);
     // }
 
-    // @Get("/:id")
-    // findById(@Param("id") id: string) {
-    //     return this.taskService.findById(id);
-    // }
+    @Get("/:id")
+    findById(@Param("id") id: number) {
+        return this.taskService.findById(id);
+    }
 
     // @Delete("/:id")
     // delete(@Param("id") id: string) {

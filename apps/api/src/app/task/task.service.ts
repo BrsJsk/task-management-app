@@ -1,7 +1,13 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
+import { TaskRepository } from "./task.repository";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Task } from './task.entity';
 
 @Injectable()
 export class TaskService {
+    constructor(
+        @InjectRepository(TaskRepository) private taskRepository: TaskRepository
+    ) {}
     // private tasks: Task[] = [];
 
     // findAll(): Task[] {
@@ -38,15 +44,15 @@ export class TaskService {
     //     return task;
     // }
 
-    // findById(id: string): Task {
-    //     const task = this.tasks.find(task => task.id === id);
+    async findById(id: number): Promise<Task> {
+        const found = await this.taskRepository.findOne(id);
 
-    //     if (!task) {
-    //         throw new NotFoundException();
-    //     }
+        if (!found) {
+            throw new NotFoundException();
+        }
 
-    //     return task;
-    // }
+        return found;
+    }
 
     // delete(id: string): Task[] {
     //     const found = this.findById(id);

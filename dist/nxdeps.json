@@ -374,11 +374,6 @@
               "mtime": 1588680245154.7434
             },
             {
-              "file": "apps/api/ormconfig.ts",
-              "ext": ".ts",
-              "mtime": 1588682310302.2522
-            },
-            {
               "file": "apps/api/src/app/.gitkeep",
               "ext": "",
               "mtime": 1588680245155.7388
@@ -441,7 +436,7 @@
             {
               "file": "apps/api/src/app/task/task.entity.ts",
               "ext": ".ts",
-              "mtime": 1588682155952.3494
+              "mtime": 1588682504709.691
             },
             {
               "file": "apps/api/src/app/task/task.module.ts",
@@ -1212,11 +1207,6 @@
         "mtime": 1588680245154.7434
       },
       {
-        "file": "apps/api/ormconfig.ts",
-        "ext": ".ts",
-        "mtime": 1588682310302.2522
-      },
-      {
         "file": "apps/api/src/app/.gitkeep",
         "ext": "",
         "mtime": 1588680245155.7388
@@ -1279,7 +1269,7 @@
       {
         "file": "apps/api/src/app/task/task.entity.ts",
         "ext": ".ts",
-        "mtime": 1588682155952.3494
+        "mtime": 1588682504709.691
       },
       {
         "file": "apps/api/src/app/task/task.module.ts",
