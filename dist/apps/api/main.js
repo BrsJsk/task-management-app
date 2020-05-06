@@ -224,6 +224,36 @@ const typeOrmConfig = {
 
 /***/ }),
 
+/***/ "./apps/api/src/app/task/dto/create-task.dto.ts":
+/*!******************************************************!*\
+  !*** ./apps/api/src/app/task/dto/create-task.dto.ts ***!
+  \******************************************************/
+/*! exports provided: CreateTaskDto */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateTaskDto", function() { return CreateTaskDto; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var class_validator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-validator */ "class-validator");
+/* harmony import */ var class_validator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(class_validator__WEBPACK_IMPORTED_MODULE_1__);
+
+
+class CreateTaskDto {
+}
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(class_validator__WEBPACK_IMPORTED_MODULE_1__["IsNotEmpty"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], CreateTaskDto.prototype, "title", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(class_validator__WEBPACK_IMPORTED_MODULE_1__["IsNotEmpty"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], CreateTaskDto.prototype, "description", void 0);
+
+
+/***/ }),
+
 /***/ "./apps/api/src/app/task/task-status.enum.ts":
 /*!***************************************************!*\
   !*** ./apps/api/src/app/task/task-status.enum.ts ***!
@@ -260,7 +290,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.service */ "./apps/api/src/app/task/task.service.ts");
-var _a;
+/* harmony import */ var _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dto/create-task.dto */ "./apps/api/src/app/task/dto/create-task.dto.ts");
+var _a, _b, _c, _d;
+
 
 
 
@@ -275,25 +307,31 @@ let TaskController = class TaskController {
     //     }
     //     return this.taskService.findAll();
     // }
-    // @Post()
-    // @UsePipes(ValidationPipe)
-    // create(@Body() createTaskDto: CreateTaskDto) {
-    //     return this.taskService.create(createTaskDto);
-    // }
+    create(createTaskDto) {
+        return this.taskService.create(createTaskDto);
+    }
     findById(id) {
         return this.taskService.findById(id);
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])(),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["UsePipes"])(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["ValidationPipe"]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"] !== "undefined" && _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"]) === "function" ? _a : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
+], TaskController.prototype, "create", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])("/:id"),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])("id")),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])("id", _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["ParseIntPipe"])),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Number]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
 ], TaskController.prototype, "findById", null);
 TaskController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])("task"),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _a : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _d : Object])
 ], TaskController);
 
 
@@ -399,10 +437,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
 /* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _task_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.entity */ "./apps/api/src/app/task/task.entity.ts");
+/* harmony import */ var _task_status_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./task-status.enum */ "./apps/api/src/app/task/task-status.enum.ts");
+
 
 
 
 let TaskRepository = class TaskRepository extends typeorm__WEBPACK_IMPORTED_MODULE_1__["Repository"] {
+    createTask(createTaskDto) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const { title, description } = createTaskDto;
+            const task = new _task_entity__WEBPACK_IMPORTED_MODULE_2__["Task"]();
+            task.title = title;
+            task.description = description;
+            task.status = _task_status_enum__WEBPACK_IMPORTED_MODULE_3__["TaskStatus"].OPEN;
+            yield task.save();
+            return task;
+        });
+    }
 };
 TaskRepository = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["EntityRepository"])(_task_entity__WEBPACK_IMPORTED_MODULE_2__["Task"])
@@ -457,17 +508,11 @@ let TaskService = class TaskService {
     //     }
     //     return this.tasks;
     // }
-    // create(createTaskDto: CreateTaskDto): Task {
-    //     const { title, description } = createTaskDto;
-    //     const task: Task = {
-    //         id: uuid(),
-    //         title,
-    //         description,
-    //         status: TaskStatus.OPEN
-    //     };
-    //     this.tasks = [...this.tasks, task];
-    //     return task;
-    // }
+    create(createTaskDto) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.taskRepository.createTask(createTaskDto);
+        });
+    }
     findById(id) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const found = yield this.taskRepository.findOne(id);
@@ -567,6 +612,17 @@ module.exports = require("@nestjs/core");
 /***/ (function(module, exports) {
 
 module.exports = require("@nestjs/typeorm");
+
+/***/ }),
+
+/***/ "class-validator":
+/*!**********************************!*\
+  !*** external "class-validator" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("class-validator");
 
 /***/ }),
 
