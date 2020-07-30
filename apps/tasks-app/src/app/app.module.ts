@@ -9,8 +9,10 @@ import { environment } from "../environments/environment";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NxModule } from "@nrwl/nx";
 import { UiComponentsModule } from '@task-management/ui-components';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, AddTaskComponent],
     imports: [
         BrowserModule,
         StoreModule.forRoot(
@@ -27,6 +29,8 @@ import { UiComponentsModule } from '@task-management/ui-components';
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         NxModule.forRoot(),
         BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
         UiComponentsModule
     ],
     providers: [],

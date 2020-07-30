@@ -1,4 +1,4 @@
-<mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi" />
+<mat-form-field class="full_with_form" appearance="fill">
+    <mat-label>{{placeholder}}</mat-label>
+    <input matInput [placeholder]="placeholder" [value]="value" (change)="valueChanged($event)"/>
 </mat-form-field>

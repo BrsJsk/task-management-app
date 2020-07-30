@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'task-management-input',
@@ -7,10 +7,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputComponent implements OnInit {
+  @Input() placeholder: string;
+  @Input() value: string = '';
 
+  @Output() onValueChanged: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public valueChanged(event: any): void {
+    this.onValueChanged.emit(event.target.value)
   }
 
 }

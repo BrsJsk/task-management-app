@@ -214,11 +214,11 @@ const typeOrmConfig = {
     type: "mariadb",
     host: "localhost",
     port: 3306,
-    username: "root",
-    password: "noname",
-    database: "taskman",
+    username: "taskmanuser",
+    password: "taskmanpassword",
+    database: "taskmandb",
     entities: [_task_task_entity__WEBPACK_IMPORTED_MODULE_0__["Task"]],
-    synchronize: false
+    synchronize: true
 };
 
 
@@ -590,7 +590,7 @@ bootstrap();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Lenovo8gen\Documents\github\task-management\apps\api\src\main.ts */"./apps/api/src/main.ts");
+module.exports = __webpack_require__(/*! /home/boris/projects/task-management/apps/api/src/main.ts */"./apps/api/src/main.ts");
 
 
 /***/ }),
