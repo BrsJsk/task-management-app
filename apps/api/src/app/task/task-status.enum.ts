@@ -1,6 +1,6 @@
 export enum TaskStatus {
-    OPEN = 'open',
-    CLOSED = 'closed',
-    ACTIVE = 'active'
-   };
+    OPEN = "open",
+    CLOSED = "closed",
+    ACTIVE = "active"
+}
    

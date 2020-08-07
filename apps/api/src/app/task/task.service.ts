@@ -4,7 +4,8 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {Task} from "./task.entity";
 import {TaskStatus} from "./task-status.enum";
 import {CreateTaskDto} from "./dto/create-task.dto";
-import {DeleteResult} from 'typeorm';
+import {DeleteResult} from "typeorm";
+import {GetTasksFilterDto} from "./dto/get-tasks-filter.dto";
 
 @Injectable()
 export class TaskService {
@@ -13,28 +14,9 @@ export class TaskService {
     ) {
     }
 
-    // private tasks: Task[] = [];
-
-    // findAll(): Task[] {
-    //     return this.tasks;
-    // }
-
-    // getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
-    //     const { search, status } = filterDto;
-    //     let tasks = this.findAll();
-    //     if (search) {
-    //         tasks = tasks.filter(
-    //             task =>
-    //                 task.description.includes(search) ||
-    //                 task.title.includes(search)
-    //         );
-    //     }
-
-    //     if (status) {
-    //         tasks = tasks.filter(task => task.status === status);
-    //     }
-    //     return this.tasks;
-    // }
+    findAll(taskFilter: GetTasksFilterDto) {
+        return this.taskRepository.getTasks(taskFilter);
+    }
 
     async create(createTaskDto: CreateTaskDto): Promise<Task> {
         return this.taskRepository.createTask(createTaskDto);

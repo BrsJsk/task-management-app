@@ -254,6 +254,74 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "./apps/api/src/app/task/dto/get-tasks-filter.dto.ts":
+/*!***********************************************************!*\
+  !*** ./apps/api/src/app/task/dto/get-tasks-filter.dto.ts ***!
+  \***********************************************************/
+/*! exports provided: GetTasksFilterDto */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetTasksFilterDto", function() { return GetTasksFilterDto; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _task_status_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../task-status.enum */ "./apps/api/src/app/task/task-status.enum.ts");
+/* harmony import */ var class_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! class-validator */ "class-validator");
+/* harmony import */ var class_validator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(class_validator__WEBPACK_IMPORTED_MODULE_2__);
+var _a;
+
+
+
+class GetTasksFilterDto {
+}
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(class_validator__WEBPACK_IMPORTED_MODULE_2__["IsOptional"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _task_status_enum__WEBPACK_IMPORTED_MODULE_1__["TaskStatus"] !== "undefined" && _task_status_enum__WEBPACK_IMPORTED_MODULE_1__["TaskStatus"]) === "function" ? _a : Object)
+], GetTasksFilterDto.prototype, "status", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(class_validator__WEBPACK_IMPORTED_MODULE_2__["IsOptional"])(),
+    Object(class_validator__WEBPACK_IMPORTED_MODULE_2__["IsNotEmpty"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], GetTasksFilterDto.prototype, "search", void 0);
+
+
+/***/ }),
+
+/***/ "./apps/api/src/app/task/pipes/task-status-validation.pipe.ts":
+/*!********************************************************************!*\
+  !*** ./apps/api/src/app/task/pipes/task-status-validation.pipe.ts ***!
+  \********************************************************************/
+/*! exports provided: TaskStatusValidationPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskStatusValidationPipe", function() { return TaskStatusValidationPipe; });
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _task_status_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../task-status.enum */ "./apps/api/src/app/task/task-status.enum.ts");
+
+
+class TaskStatusValidationPipe {
+    constructor() {
+        this.allowed = [_task_status_enum__WEBPACK_IMPORTED_MODULE_1__["TaskStatus"].ACTIVE, _task_status_enum__WEBPACK_IMPORTED_MODULE_1__["TaskStatus"].CLOSED, _task_status_enum__WEBPACK_IMPORTED_MODULE_1__["TaskStatus"].OPEN];
+    }
+    transform(value) {
+        if (!this.isStatusValid(value)) {
+            throw new _nestjs_common__WEBPACK_IMPORTED_MODULE_0__["BadRequestException"]("Status is not valid");
+        }
+        return value;
+    }
+    isStatusValid(status) {
+        const idx = this.allowed.indexOf(status);
+        return idx !== -1;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./apps/api/src/app/task/task-status.enum.ts":
 /*!***************************************************!*\
   !*** ./apps/api/src/app/task/task-status.enum.ts ***!
@@ -270,7 +338,6 @@ var TaskStatus;
     TaskStatus["CLOSED"] = "closed";
     TaskStatus["ACTIVE"] = "active";
 })(TaskStatus || (TaskStatus = {}));
-;
 
 
 /***/ }),
@@ -291,7 +358,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _task_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task.service */ "./apps/api/src/app/task/task.service.ts");
 /* harmony import */ var _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dto/create-task.dto */ "./apps/api/src/app/task/dto/create-task.dto.ts");
-var _a, _b, _c, _d;
+/* harmony import */ var _pipes_task_status_validation_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pipes/task-status-validation.pipe */ "./apps/api/src/app/task/pipes/task-status-validation.pipe.ts");
+/* harmony import */ var _task_status_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./task-status.enum */ "./apps/api/src/app/task/task-status.enum.ts");
+/* harmony import */ var _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dto/get-tasks-filter.dto */ "./apps/api/src/app/task/dto/get-tasks-filter.dto.ts");
+var _a, _b, _c, _d, _e, _f;
+
+
+
 
 
 
@@ -300,13 +373,9 @@ let TaskController = class TaskController {
     constructor(taskService) {
         this.taskService = taskService;
     }
-    // @Get()
-    // findTasks(@Query() filterDto: GetTasksFilterDto) {
-    //     if (Object.keys(filterDto)) {
-    //         return this.taskService.getTasksWithFilters(filterDto);
-    //     }
-    //     return this.taskService.findAll();
-    // }
+    findTasks(filterDto) {
+        return this.taskService.findAll(filterDto);
+    }
     create(createTaskDto) {
         return this.taskService.create(createTaskDto);
     }
@@ -316,21 +385,31 @@ let TaskController = class TaskController {
     delete(id) {
         return this.taskService.delete(id);
     }
+    updateStatus(id, body) {
+        return this.taskService.updateStatus(id, body);
+    }
 };
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Query"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_6__["GetTasksFilterDto"] !== "undefined" && _dto_get_tasks_filter_dto__WEBPACK_IMPORTED_MODULE_6__["GetTasksFilterDto"]) === "function" ? _a : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+], TaskController.prototype, "findTasks", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])(),
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["UsePipes"])(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["ValidationPipe"]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"] !== "undefined" && _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"]) === "function" ? _a : Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_b = typeof _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"] !== "undefined" && _dto_create_task_dto__WEBPACK_IMPORTED_MODULE_3__["CreateTaskDto"]) === "function" ? _b : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
 ], TaskController.prototype, "create", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])("/:id"),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])("id", _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["ParseIntPipe"])),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Number]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_d = typeof Promise !== "undefined" && Promise) === "function" ? _d : Object)
 ], TaskController.prototype, "findById", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Delete"])("/:id"),
@@ -339,9 +418,17 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Number]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
 ], TaskController.prototype, "delete", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Patch"])("/:id/status"),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])("id", _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["ParseIntPipe"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(1, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])("status", _pipes_task_status_validation_pipe__WEBPACK_IMPORTED_MODULE_4__["TaskStatusValidationPipe"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Number, typeof (_e = typeof _task_status_enum__WEBPACK_IMPORTED_MODULE_5__["TaskStatus"] !== "undefined" && _task_status_enum__WEBPACK_IMPORTED_MODULE_5__["TaskStatus"]) === "function" ? _e : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+], TaskController.prototype, "updateStatus", null);
 TaskController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])("task"),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _d : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_f = typeof _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"] !== "undefined" && _task_service__WEBPACK_IMPORTED_MODULE_2__["TaskService"]) === "function" ? _f : Object])
 ], TaskController);
 
 
@@ -464,6 +551,18 @@ let TaskRepository = class TaskRepository extends typeorm__WEBPACK_IMPORTED_MODU
             return task;
         });
     }
+    getTasks(filterDto) {
+        const { search, status } = filterDto;
+        const query = this.createQueryBuilder("task");
+        if (status) {
+            query.andWhere("task.status = :status", { status });
+        }
+        if (search) {
+            query
+                .andWhere("task.title LIKE :search OR task.description LIKE :search", { search: `%${search}%` });
+        }
+        return query.getMany();
+    }
 };
 TaskRepository = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["EntityRepository"])(_task_entity__WEBPACK_IMPORTED_MODULE_2__["Task"])
@@ -499,25 +598,9 @@ let TaskService = class TaskService {
     constructor(taskRepository) {
         this.taskRepository = taskRepository;
     }
-    // private tasks: Task[] = [];
-    // findAll(): Task[] {
-    //     return this.tasks;
-    // }
-    // getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
-    //     const { search, status } = filterDto;
-    //     let tasks = this.findAll();
-    //     if (search) {
-    //         tasks = tasks.filter(
-    //             task =>
-    //                 task.description.includes(search) ||
-    //                 task.title.includes(search)
-    //         );
-    //     }
-    //     if (status) {
-    //         tasks = tasks.filter(task => task.status === status);
-    //     }
-    //     return this.tasks;
-    // }
+    findAll(taskFilter) {
+        return this.taskRepository.getTasks(taskFilter);
+    }
     create(createTaskDto) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             return this.taskRepository.createTask(createTaskDto);
@@ -534,6 +617,14 @@ let TaskService = class TaskService {
     }
     delete(id) {
         return this.taskRepository.delete(id);
+    }
+    updateStatus(id, status) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const task = yield this.findById(id);
+            task.status = status;
+            yield task.save();
+            return task;
+        });
     }
 };
 TaskService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -572,6 +663,7 @@ function bootstrap() {
         const app = yield _nestjs_core__WEBPACK_IMPORTED_MODULE_1__["NestFactory"].create(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"]);
         const globalPrefix = "api";
         app.setGlobalPrefix(globalPrefix);
+        app.enableCors();
         const port = process.env.port || 3333;
         yield app.listen(port, () => {
             console.log("Listening at http://localhost:" + port + "/" + globalPrefix);
@@ -590,7 +682,7 @@ bootstrap();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/boris/projects/task-management/apps/api/src/main.ts */"./apps/api/src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\boris\Documents\projects\task-management-app\apps\api\src\main.ts */"./apps/api/src/main.ts");
 
 
 /***/ }),
