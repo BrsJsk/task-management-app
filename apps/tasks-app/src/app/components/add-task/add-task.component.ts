@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TaskService} from "../../services/task/task.service";
+import {NotificationService} from "../../../../../../libs/ui-components/src/lib/notifications/services/notification.service";
 
 @Component({
     selector: "task-management-add-task",
@@ -21,8 +22,7 @@ import {TaskService} from "../../services/task/task.service";
                 (click)="saveTask()"
                 [disabled]="!form.valid"
             >Save
-            </task-management-button
-            >
+            </task-management-button>
         </div>
     `,
     styles: [
@@ -38,7 +38,11 @@ import {TaskService} from "../../services/task/task.service";
 export class AddTaskComponent implements OnInit {
     public form: FormGroup;
 
-    constructor(private fb: FormBuilder, private taskService: TaskService) {
+    constructor(
+        private fb: FormBuilder,
+        private taskService: TaskService,
+        private notificationService: NotificationService
+    ) {
     }
 
     ngOnInit(): void {
@@ -58,13 +62,13 @@ export class AddTaskComponent implements OnInit {
 
     public saveTask(): void {
         this.taskService.createTask(this.form.value).subscribe(
-            result => {
-                console.log(result);
+            () => {
+                this.notificationService.show("Task created!");
             },
             err => {
+                this.notificationService.show("Error!");
                 console.error(err);
             }
         );
-        console.log(this.form.value);
     }
 }
