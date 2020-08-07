@@ -1,16 +1,19 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
 
-import { AppComponent } from "./app.component";
-import { StoreModule } from "@ngrx/store";
-import { EffectsModule } from "@ngrx/effects";
-import { StoreDevtoolsModule } from "@ngrx/store-devtools";
-import { environment } from "../environments/environment";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NxModule } from "@nrwl/nx";
-import { UiComponentsModule } from '@task-management/ui-components';
-import { AddTaskComponent } from './components/add-task/add-task.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AppComponent} from "./app.component";
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {environment} from "../environments/environment";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NxModule} from "@nrwl/nx";
+import {UiComponentsModule} from '@task-management/ui-components';
+import {AddTaskComponent} from './components/add-task/add-task.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TaskService} from "./services/task/task.service";
+import {HttpClientModule} from "@angular/common/http";
+
 @NgModule({
     declarations: [AppComponent, AddTaskComponent],
     imports: [
@@ -31,9 +34,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         UiComponentsModule
     ],
-    providers: [],
+    providers: [TaskService],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}

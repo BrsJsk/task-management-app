@@ -1,16 +1,28 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {TaskService} from "../../services/task/task.service";
 
 @Component({
-    selector: 'task-management-add-task',
+    selector: "task-management-add-task",
     template: `
         <div id="inputs_wrapper">
-            <task-management-input placeholder="Title" [value]="form?.get('title')?.value"
-                                   (onValueChanged)="titleChanged($event)"></task-management-input>
-            <task-management-input placeholder="Description" [value]="form?.get('description')?.value"
-                                   (onValueChanged)="descriptionChanged($event)"></task-management-input>
+            <task-management-input
+                placeholder="Title"
+                [value]="form?.get('title')?.value"
+                (onValueChanged)="titleChanged($event)"
+            ></task-management-input>
+            <task-management-input
+                placeholder="Description"
+                [value]="form?.get('description')?.value"
+                (onValueChanged)="descriptionChanged($event)"
+            ></task-management-input>
 
-            <task-management-button (click)="saveTask()" [disabled]="!form.valid">Save</task-management-button>
+            <task-management-button
+                (click)="saveTask()"
+                [disabled]="!form.valid"
+            >Save
+            </task-management-button
+            >
         </div>
     `,
     styles: [
@@ -26,14 +38,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class AddTaskComponent implements OnInit {
     public form: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private taskService: TaskService) {
     }
 
     ngOnInit(): void {
         this.form = this.fb.group({
             title: [null, Validators.required],
             description: null
-        })
+        });
     }
 
     public titleChanged(value: string): void {
@@ -45,7 +57,14 @@ export class AddTaskComponent implements OnInit {
     }
 
     public saveTask(): void {
-        console.log(this.form.value)
+        this.taskService.createTask(this.form.value).subscribe(
+            result => {
+                console.log(result);
+            },
+            err => {
+                console.error(err);
+            }
+        );
+        console.log(this.form.value);
     }
-
 }
